@@ -1,0 +1,133 @@
+// Hero section styles
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+
+    .profile-image-container {
+        max-width: 350px;
+        margin: 0 auto;
+
+        .profile-image {
+            border: 8px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+// Timeline for experience section
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background-color: #dee2e6;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1px;
+    }
+
+    .timeline-item {
+        padding: 10px 0;
+        position: relative;
+        width: 100%;
+
+        .timeline-item-content {
+            position: relative;
+            width: 45%;
+
+            &.left {
+                float: left;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    background-color: #007bff;
+                    top: 15px;
+                    right: -60px;
+                    border-radius: 50%;
+                    z-index: 1;
+                }
+            }
+
+            &.right {
+                float: right;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    background-color: #007bff;
+                    top: 15px;
+                    left: -60px;
+                    border-radius: 50%;
+                    z-index: 1;
+                }
+            }
+        }
+
+        &:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    }
+}
+
+// Card hover effects
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+// Skills progress bars
+.progress {
+    height: 10px;
+    margin-top: 10px;
+
+    .progress-bar {
+        transition: width 1.5s ease;
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 767px) {
+    .timeline {
+        &:before {
+            left: 40px;
+        }
+
+        .timeline-item {
+            .timeline-item-content {
+                width: calc(100% - 80px);
+
+                &.left,
+                &.right {
+                    float: right;
+
+                    &:after {
+                        left: -50px;
+                        right: auto;
+                    }
+                }
+            }
+        }
+    }
+}
